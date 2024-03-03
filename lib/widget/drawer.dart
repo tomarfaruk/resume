@@ -4,7 +4,7 @@ import 'package:resume_builder/config/strings.dart';
 import 'package:resume_builder/controller/pdf_setting.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key? key}) : super(key: key);
+  const MyDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {

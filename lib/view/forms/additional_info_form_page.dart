@@ -6,7 +6,7 @@ import 'package:resume_builder/model/additional_info_model.dart';
 import 'package:resume_builder/widget/input_decorator.dart';
 
 class AdditionalInfoFormPage extends StatefulWidget {
-  const AdditionalInfoFormPage({Key? key}) : super(key: key);
+  const AdditionalInfoFormPage({super.key});
 
   @override
   State<AdditionalInfoFormPage> createState() => _AdditionalInfoFormPageState();

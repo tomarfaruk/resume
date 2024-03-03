@@ -14,7 +14,7 @@ import 'project_info_form_page.dart';
 import 'signeture_pad.dart';
 
 class MainForm extends StatefulWidget {
-  const MainForm({Key? key}) : super(key: key);
+  const MainForm({super.key});
 
   @override
   State<MainForm> createState() => _MainFormState();

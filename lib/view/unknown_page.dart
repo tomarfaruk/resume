@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UnknownRoutePage extends StatefulWidget {
-  const UnknownRoutePage({Key? key}) : super(key: key);
+  const UnknownRoutePage({super.key});
 
   @override
   State<UnknownRoutePage> createState() => _UnknownRoutePageState();

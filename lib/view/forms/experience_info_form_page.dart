@@ -9,7 +9,7 @@ import 'package:resume_builder/widget/empty_state.dart';
 import 'common_form/common_form.dart';
 
 class ExperienceInfoFormPage extends StatefulWidget {
-  const ExperienceInfoFormPage({Key? key}) : super(key: key);
+  const ExperienceInfoFormPage({super.key});
 
   @override
   State<ExperienceInfoFormPage> createState() => _ExperienceInfoFormPageState();

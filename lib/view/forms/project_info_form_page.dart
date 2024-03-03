@@ -6,7 +6,7 @@ import 'package:resume_builder/widget/empty_state.dart';
 import 'common_form/common_form.dart';
 
 class ProjectInfoFormPage extends StatefulWidget {
-  const ProjectInfoFormPage({Key? key}) : super(key: key);
+  const ProjectInfoFormPage({super.key});
 
   @override
   State<ProjectInfoFormPage> createState() => _ProjectInfoFormPageState();

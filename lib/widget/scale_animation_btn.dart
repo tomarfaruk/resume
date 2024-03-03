@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class ScaleAnimationBtn extends StatefulWidget {
   final VoidCallback onTap;
   const ScaleAnimationBtn({
-    Key? key,
+    super.key,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   State<ScaleAnimationBtn> createState() => _ScaleAnimationBtnState();

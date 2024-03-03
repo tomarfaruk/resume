@@ -21,7 +21,7 @@ import 'package:resume_builder/widget/circuler_btn.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PreviewPdfPage extends StatefulWidget {
-  const PreviewPdfPage({Key? key}) : super(key: key);
+  const PreviewPdfPage({super.key});
 
   @override
   State<PreviewPdfPage> createState() => _PreviewPdfPageState();

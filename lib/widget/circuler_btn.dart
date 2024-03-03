@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume_builder/config/extension.dart';
 
 class CirculerBtn extends StatelessWidget {
-  const CirculerBtn({Key? key, required this.child, required this.onTap})
-      : super(key: key);
+  const CirculerBtn({super.key, required this.child, required this.onTap});
   final VoidCallback onTap;
   final Widget child;
 

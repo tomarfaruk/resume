@@ -7,7 +7,7 @@ import 'package:resume_builder/utils/utils.dart';
 import 'package:resume_builder/widget/input_decorator.dart';
 
 class PersonalInfoFormPage extends StatefulWidget {
-  const PersonalInfoFormPage({Key? key}) : super(key: key);
+  const PersonalInfoFormPage({super.key});
   @override
   State<PersonalInfoFormPage> createState() => _PersonalInfoFormPageState();
 }

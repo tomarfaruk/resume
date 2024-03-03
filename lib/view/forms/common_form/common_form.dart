@@ -14,12 +14,12 @@ class CommonForm extends StatefulWidget {
   final String titlehint;
 
   CommonForm({
-    Key? key,
+    super.key,
     required this.infoModel,
     required this.onDelete,
     required this.headerhint,
     required this.titlehint,
-  }) : super(key: key);
+  });
   @override
   // ignore: no_logic_in_create_state
   State<CommonForm> createState() => state;

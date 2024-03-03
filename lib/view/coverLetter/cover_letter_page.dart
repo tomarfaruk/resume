@@ -8,9 +8,9 @@ import 'package:resume_builder/widget/scale_animation_btn.dart';
 
 class CoverLetterPage extends StatefulWidget {
   const CoverLetterPage({
-    Key? key,
+    super.key,
     this.coverLetterModel,
-  }) : super(key: key);
+  });
 
   final CoverLetterModel? coverLetterModel;
 

@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:resume_builder/controller/get_storate_controller.dart';
 
 class ImageForm extends StatefulWidget {
-  const ImageForm({Key? key}) : super(key: key);
+  const ImageForm({super.key});
 
   @override
   State<ImageForm> createState() => _ImageFormState();
