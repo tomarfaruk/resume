@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:pdf/pdf.dart';
@@ -8,6 +9,7 @@ import 'package:resume_builder/controller/pdf_setting.dart';
 import 'package:resume_builder/model/additional_info_model.dart';
 import 'package:resume_builder/model/education_info_model.dart';
 import 'package:resume_builder/model/personal_info_model.dart';
+
 import 'get_storate_controller.dart';
 import 'pdf_api.dart';
 import 'signature_widget.dart';
@@ -103,7 +105,10 @@ class TemplateFive {
       ),
     );
 
-    return PdfApi.saveDocument(name: 'imagepdf.pdf', pdf: doc);
+    return PdfApi.saveDocument(
+      name: 'resume.pdf',
+      pdf: doc,
+    );
   }
 
   Widget buildSummary() {
@@ -226,8 +231,8 @@ class TemplateFive {
       children: [
         headerNoBorder('Profile'),
         Container(
-            margin:
-                const EdgeInsets.symmetric(vertical: _headerSpace * PdfPageFormat.cm),
+            margin: const EdgeInsets.symmetric(
+                vertical: _headerSpace * PdfPageFormat.cm),
             decoration: BoxDecoration(
               border: Border.all(
                   width: 1,
@@ -299,8 +304,8 @@ class TemplateFive {
       widgets.add(SizedBox(height: 0.1 * PdfPageFormat.cm));
     }
     if (start.isNotEmpty) {
-      widgets
-          .add(Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
+      widgets.add(
+          Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
       widgets.add(SizedBox(height: 01 * PdfPageFormat.mm));
     }
     if (title.isNotEmpty) {
@@ -328,8 +333,8 @@ class TemplateFive {
       children: [
         headerNoBorder(title),
         Container(
-          margin:
-              const EdgeInsets.symmetric(vertical: _headerSpace * PdfPageFormat.cm),
+          margin: const EdgeInsets.symmetric(
+              vertical: _headerSpace * PdfPageFormat.cm),
           decoration: BoxDecoration(
               border: Border.all(
                   width: 1,

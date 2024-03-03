@@ -8,7 +8,6 @@ class Strings {
   static const String experienceInfo = 'experienceInfo';
   static const String referenceInfo = 'referenceInfo';
   static const String coderLetterInfo = 'coderLetterInfo';
-  static const String appFolder = '/storage/emulated/0/Resume_builder';
 
   static const String fontRobotoCondensedPath =
       'assets/fonts/RobotoCondensed-Regular.ttf';

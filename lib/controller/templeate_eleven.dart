@@ -132,7 +132,10 @@ class TemplateEleven {
       ),
     );
 
-    return PdfApi.saveDocument(name: 'imagepdf.pdf', pdf: doc);
+    return PdfApi.saveDocument(
+      name: 'resume.pdf',
+      pdf: doc,
+    );
   }
 
   Widget commonTemplate(String title, String text) {

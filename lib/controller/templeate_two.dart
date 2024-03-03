@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:pdf/pdf.dart';
@@ -8,6 +9,7 @@ import 'package:resume_builder/controller/pdf_setting.dart';
 import 'package:resume_builder/model/additional_info_model.dart';
 import 'package:resume_builder/model/education_info_model.dart';
 import 'package:resume_builder/model/personal_info_model.dart';
+
 import 'get_storate_controller.dart';
 import 'pdf_api.dart';
 import 'signature_widget.dart';
@@ -136,7 +138,10 @@ class TemplateTwo {
       ),
     );
 
-    return PdfApi.saveDocument(name: 'imagepdf.pdf', pdf: doc);
+    return PdfApi.saveDocument(
+      name: 'resume.pdf',
+      pdf: doc,
+    );
   }
 
   Widget commonTemplate(String title, String text) {
@@ -189,10 +194,12 @@ class TemplateTwo {
           destination: 'tel:$phone');
     }
     if (brirthDate.isNotEmpty) {
-      birthChild = Text(brirthDate, style: const TextStyle(color: PdfColors.black));
+      birthChild =
+          Text(brirthDate, style: const TextStyle(color: PdfColors.black));
     }
     if (address.isNotEmpty) {
-      addressChild = Text(address, style: const TextStyle(color: PdfColors.black));
+      addressChild =
+          Text(address, style: const TextStyle(color: PdfColors.black));
     }
 
     return Container(
@@ -324,8 +331,8 @@ class TemplateTwo {
       widgets.add(SizedBox(height: 0.1 * PdfPageFormat.cm));
     }
     if (start.isNotEmpty) {
-      widgets
-          .add(Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
+      widgets.add(
+          Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
       widgets.add(SizedBox(height: 01 * PdfPageFormat.mm));
     }
     if (title.isNotEmpty) {

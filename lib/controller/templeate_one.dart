@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:pdf/pdf.dart';
@@ -8,6 +9,7 @@ import 'package:resume_builder/controller/pdf_setting.dart';
 import 'package:resume_builder/model/additional_info_model.dart';
 import 'package:resume_builder/model/education_info_model.dart';
 import 'package:resume_builder/model/personal_info_model.dart';
+
 import 'get_storate_controller.dart';
 import 'pdf_api.dart';
 import 'signature_widget.dart';
@@ -61,20 +63,6 @@ class TemplateOne {
         italic: ttfItalic,
         boldItalic: ttfBoldItalic,
       ),
-      // buildBackground: (Context context) => FullPage(
-      //   ignoreMargins: true,
-      //   child: Watermark.text('DRAFT'),
-      // ),
-      // buildForeground: (Context context) => Align(
-      //   alignment: Alignment.bottomLeft,
-      //   child: SizedBox(
-      //     width: 100,
-      //     height: 100,
-      //     child: PdfLogo(),
-      //   ),
-      // ),
-      // pageFormat: PdfPageFormat.a4,
-      // margin: EdgeInsets.all(0),
     );
 
     doc.addPage(
@@ -100,7 +88,10 @@ class TemplateOne {
       ),
     );
 
-    return PdfApi.saveDocument(name: 'imagepdf.pdf', pdf: doc);
+    return PdfApi.saveDocument(
+      name: 'resume.pdf',
+      pdf: doc,
+    );
   }
 
   List<Widget> buildHeader() {
@@ -127,10 +118,12 @@ class TemplateOne {
     );
 
     final phoneChild = UrlLink(
-        child: Text('Phone: $phone', style: const TextStyle(color: PdfColors.black)),
+        child: Text('Phone: $phone',
+            style: const TextStyle(color: PdfColors.black)),
         destination: 'tel:$phone');
     final emailChild = UrlLink(
-        child: Text('Email: $email', style: const TextStyle(color: PdfColors.black)),
+        child: Text('Email: $email',
+            style: const TextStyle(color: PdfColors.black)),
         destination: 'mailto:$email');
 
     if (fname.isNotEmpty || lanme.isNotEmpty) widgets.add(nameChild);
@@ -233,7 +226,8 @@ class TemplateOne {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: Text('Address:', style: const TextStyle(color: PdfColors.grey)),
+              child: Text('Address:',
+                  style: const TextStyle(color: PdfColors.grey)),
             ),
             Expanded(flex: 3, child: Text(address))
           ],
@@ -245,8 +239,8 @@ class TemplateOne {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
-              child:
-                  Text('Birth Date:', style: const TextStyle(color: PdfColors.grey))),
+              child: Text('Birth Date:',
+                  style: const TextStyle(color: PdfColors.grey))),
           Expanded(flex: 3, child: Text(birthday)),
         ],
       );
@@ -282,7 +276,8 @@ class TemplateOne {
               birthChild,
               summaryChild,
               Container(
-                margin: const EdgeInsets.symmetric(vertical: 0.3 * PdfPageFormat.cm),
+                margin: const EdgeInsets.symmetric(
+                    vertical: 0.3 * PdfPageFormat.cm),
                 decoration: BoxDecoration(
                   border: Border.all(width: 1, style: BorderStyle.dashed),
                 ),
@@ -383,8 +378,8 @@ class TemplateOne {
       widgets.add(SizedBox(height: 0.1 * PdfPageFormat.cm));
     }
     if (start.isNotEmpty) {
-      widgets
-          .add(Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
+      widgets.add(
+          Text('$start-$end', style: const TextStyle(color: PdfColors.grey)));
       widgets.add(SizedBox(height: 01 * PdfPageFormat.mm));
     }
     if (title.isNotEmpty) {

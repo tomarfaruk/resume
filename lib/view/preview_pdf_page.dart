@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:resume_builder/config/strings.dart';
 import 'package:resume_builder/controller/cntc_pdf.dart';
 import 'package:resume_builder/controller/get_storate_controller.dart';
+import 'package:resume_builder/controller/pdf_api.dart';
 import 'package:resume_builder/controller/pdf_setting.dart';
 import 'package:resume_builder/controller/templeate_eleven.dart';
 import 'package:resume_builder/controller/templeate_five.dart';
@@ -16,7 +17,6 @@ import 'package:resume_builder/controller/templeate_ten.dart';
 import 'package:resume_builder/controller/templeate_thirteen.dart';
 import 'package:resume_builder/controller/templeate_twelve.dart';
 import 'package:resume_builder/controller/templeate_two.dart';
-import 'package:resume_builder/utils/toast.dart';
 import 'package:resume_builder/widget/circuler_btn.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -28,7 +28,7 @@ class PreviewPdfPage extends StatefulWidget {
 }
 
 class _PreviewPdfPageState extends State<PreviewPdfPage> {
-  GetStateController getStateController = Get.find();
+  final getStateController = Get.find<GetStateController>();
   PdfSetting pdfSetting = Get.put(PdfSetting());
 
   final _colorList = [
@@ -112,7 +112,7 @@ class _PreviewPdfPageState extends State<PreviewPdfPage> {
         });
   }
 
-  final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+  final _scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -333,10 +333,13 @@ class _PreviewPdfPageState extends State<PreviewPdfPage> {
                 ),
                 CirculerBtn(
                   onTap: () async {
-                    final status = await Permission.storage.request();
-                    if (status == PermissionStatus.granted) {
-                      pdfPath.copySync(await getPatFolderPath(pdfIndex));
-                      myToast('PDF has been Saved ${Strings.appFolder}');
+                    print(pdfPath.readAsBytesSync().length);
+                    if (await Permission.manageExternalStorage
+                        .request()
+                        .isGranted) {
+                      final result = await PdfApi.openFile(pdfPath.path);
+                      print(result.message);
+                      print(pdfPath);
                     }
                   },
                   child: const Icon(Icons.download, color: Colors.white),
@@ -457,15 +460,6 @@ class _PreviewPdfPageState extends State<PreviewPdfPage> {
   }
 }
 
-Future<String> getPatFolderPath(int i) async {
-  var knockDir = await Directory(Strings.appFolder).create(recursive: true);
-
-  String outpath =
-      '${knockDir.path}/${i}_${DateTime.now().millisecondsSinceEpoch.toString()}.pdf';
-
-  return outpath;
-}
-
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");
@@ -477,4 +471,3 @@ class HexColor extends Color {
 
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
-// https://www.w3schools.com/colors/colors_groups.asp
