@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:resume_builder/config/strings.dart';
 import 'package:resume_builder/controller/cntc_pdf.dart';
 import 'package:resume_builder/controller/get_storate_controller.dart';
@@ -333,14 +332,9 @@ class _PreviewPdfPageState extends State<PreviewPdfPage> {
                 ),
                 CirculerBtn(
                   onTap: () async {
-                    print(pdfPath.readAsBytesSync().length);
-                    if (await Permission.manageExternalStorage
-                        .request()
-                        .isGranted) {
-                      final result = await PdfApi.openFile(pdfPath.path);
-                      print(result.message);
-                      print(pdfPath);
-                    }
+                    final result = await PdfApi.openFile(pdfPath.path);
+                    log(result.message);
+                    log(pdfPath.path);
                   },
                   child: const Icon(Icons.download, color: Colors.white),
                 ),

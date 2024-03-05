@@ -2,9 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="umorfarukcse.apps.resumee">
 
-<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
-
     <application
         android:label="Resume Builder"
         android:name="${applicationName}"
