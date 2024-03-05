@@ -33,7 +33,12 @@ class HomePage extends StatelessWidget {
                     width: (width - 32) / 2,
                     child: Column(
                       children: [
-                        const Expanded(child: Icon(Icons.edit)),
+                        Expanded(
+                          child: SvgPicture.asset(
+                            'assets/splash.svg',
+                            height: 50,
+                          ),
+                        ),
                         Container(
                           height: 30,
                           color: Colors.grey,
@@ -69,7 +74,7 @@ class HomePage extends StatelessWidget {
                           height: 30,
                           color: Colors.grey,
                           width: double.infinity,
-                          child: const Center(child: Text("CV or Resume")),
+                          child: const Center(child: Text("Cover Letter")),
                         )
                       ],
                     ),
@@ -78,65 +83,65 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: [
-              Card(
-                elevation: 3,
-                margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
-                color: const Color(0xffF5F5F5),
-                child: InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    height: 120,
-                    width: (width - 32) / 2,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: SvgPicture.asset(
-                            'assets/splash.svg',
-                            height: 50,
-                          ),
-                        ),
-                        Container(
-                          height: 30,
-                          color: Colors.grey,
-                          width: double.infinity,
-                          child:
-                              const Center(child: Text("Resignation Letter")),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Card(
-                elevation: 3,
-                margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
-                color: const Color(0xffF5F5F5),
-                child: SizedBox(
-                  height: 120,
-                  width: (width - 32) / 2,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: SvgPicture.asset(
-                          'assets/splash.svg',
-                          height: 50,
-                        ),
-                      ),
-                      Container(
-                        height: 30,
-                        color: Colors.grey,
-                        width: double.infinity,
-                        child: const Center(child: Text("Promotion Letter")),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Card(
+          //       elevation: 3,
+          //       margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+          //       color: const Color(0xffF5F5F5),
+          //       child: InkWell(
+          //         onTap: () {},
+          //         child: SizedBox(
+          //           height: 120,
+          //           width: (width - 32) / 2,
+          //           child: Column(
+          //             children: [
+          //               Expanded(
+          //                 child: SvgPicture.asset(
+          //                   'assets/splash.svg',
+          //                   height: 50,
+          //                 ),
+          //               ),
+          //               Container(
+          //                 height: 30,
+          //                 color: Colors.grey,
+          //                 width: double.infinity,
+          //                 child:
+          //                     const Center(child: Text("Resignation Letter")),
+          //               )
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //     const Spacer(),
+          //     Card(
+          //       elevation: 3,
+          //       margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+          //       color: const Color(0xffF5F5F5),
+          //       child: SizedBox(
+          //         height: 120,
+          //         width: (width - 32) / 2,
+          //         child: Column(
+          //           children: [
+          //             Expanded(
+          //               child: SvgPicture.asset(
+          //                 'assets/splash.svg',
+          //                 height: 50,
+          //               ),
+          //             ),
+          //             Container(
+          //               height: 30,
+          //               color: Colors.grey,
+          //               width: double.infinity,
+          //               child: const Center(child: Text("Promotion Letter")),
+          //             )
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );
