@@ -40,6 +40,11 @@ jobs:
       # - name: Run Flutter Tests
       #   run: fvm flutter test
       #   shell: bash
+      
+      # Analyze Dart code
+      - name: Analyze Dart Code
+        run: fvm dart analyze
+        shell: bash
 
       # Build the Android App Bundle
       - name: Build App Bundle
