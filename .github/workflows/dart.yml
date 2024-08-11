@@ -40,10 +40,15 @@ jobs:
       # - name: Run Flutter Tests
       #   run: fvm flutter test
       #   shell: bash
-      
+
+      # format Dart code
+      - name: Format Dart Code
+        run: fvm dart format .
+        shell: bash
+        
       # Analyze Dart code
       - name: Analyze Dart Code
-        run: fvm dart analyze
+        run: fvm dart analyze .
         shell: bash
 
       # format Dart code
