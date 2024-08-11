@@ -43,7 +43,7 @@ jobs:
 
       # format Dart code
       - name: Format Dart Code
-        run: fvm dart format .
+        run: fvm dart format --output=none --set-exit-if-changed .
         shell: bash
         
       # Analyze Dart code
