@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("hello linter");
     return GetMaterialApp(
       title: 'Build Resume',
       enableLog: false,
