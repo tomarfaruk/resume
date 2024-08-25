@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544270227395",
+    "project_id": "resumee-d39fe",
+    "storage_bucket": "resumee-d39fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544270227395:android:601853253c91b76c9f8f76",
+        "android_client_info": {
+          "package_name": "umorfarukcse.apps.resumee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi5hAz7lbl_knOChb-V-cXtnQE81hBB6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
